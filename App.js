@@ -1,32 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Image, Text, View, Button } from 'react-native';
-import LoginPage from './src/components/loginPage';
-import logo from './src/assets/images/fb-logo.png';
 import React, { useState } from 'react';
-import SignupPage from './src/components/SignupPage';
+import NavContainer from './src/navigation';
 
 export default function App() {
 
-  const [isLogin, setIsLogin] = useState(true);
-
-  const toggleLoginSignup = () => {
-    setIsLogin(!isLogin);
-  };
+ 
 
   return (
-    <View style={styles.container}>
-      <View style={styles.logoContainer}>
-        <Image style={styles.logoStyles} source={logo} />
-        <Text style={styles.welcomeText}>Facebook</Text>
-      </View>
-      <View style={{ width: '100%' }}>
-        {isLogin ? (<LoginPage />) : (<SignupPage />)}
-      </View>
-      <View style={{ width: '100%' }}>
-        <Button style={styles.navigateBtn} onPress={toggleLoginSignup} title={isLogin ? "Create a New Account" : "Log into existing Account"} />
-      </View>
-      <StatusBar style="auto" />
-    </View>
+     <NavContainer />
+      
   );
 }
 
